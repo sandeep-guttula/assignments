@@ -17,15 +17,12 @@ def longest_sub_array(arr)
             end
         end
     end
-    if max_length == 0
-        puts "No sub-array found"
-    else
-        puts max_length
-    end
+    
+    return max_length
 end
 
 print "Enter the elements of the array: "
 arr = gets.chomp.split(' ').map(&:to_i)
 
-longest_sub_array(arr)
+puts longest_sub_array(arr)
   
