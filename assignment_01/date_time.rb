@@ -25,4 +25,8 @@ def date_and_time(date_time)
     puts format_03
 end
 
-date_and_time(DateTime.now) 
+
+puts "Enter date and time in DD-MM-YYYY HH:MM format:"
+datetime = gets.chomp
+datetime = DateTime.parse(datetime)
+date_and_time(datetime) 

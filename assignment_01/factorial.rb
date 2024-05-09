@@ -12,6 +12,7 @@ def factorial(n)
     return n * factorial(n-1)
 end
 
+# get the number from the user
 print "Enter the number: "
 n = gets.chomp.to_i
 puts factorial(n)

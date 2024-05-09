@@ -30,8 +30,12 @@ def hash_subset(hash1, hash2)
 
     # checking if keys of hash2 are a subset of keys of hash1
     hash2.each do |key, value|
+
+        # checking if key is present in hash1
         if hash1.include?(key) 
             puts "Keys of Hash #2 are a subset of Keys of Hash #1"
+
+            # checking if value is present in hash1
             if hash1[key] == value
                 puts "Values of Hash #2 are a subset of Values of Hash #1"
             else    
@@ -39,6 +43,7 @@ def hash_subset(hash1, hash2)
             end
         else
             puts "Keys of Hash #2 are NOT a subset of Keys of Hash #1"
+            
             puts "Values of Hash #2 are NOT a subset of Values of Hash #1"
         end
     end
