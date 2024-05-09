@@ -13,7 +13,17 @@
 =end
   
 def valid_expression(expression)
+
     stack = []
+
+    # checking if the expression contains alphabets or special characters
+    alphabetsAndSpecialChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&_=,.<>?;:"
+
+    expression.each_char do |char|
+        if alphabetsAndSpecialChars.include?(char)
+            return false
+        end
+    end
   
     # possible pairs of brackets
     pairs = { ')' => '(', ']' => '[', '}' => '{' }
