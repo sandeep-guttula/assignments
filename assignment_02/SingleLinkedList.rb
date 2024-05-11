@@ -118,13 +118,13 @@ sll = SingleLinkedList.new
 
 while true
     puts "|--------------------------------------------------------------------|"
-    puts "| Linked List Operations                                              |"
+    puts "| Linked List Operations                                             |"
     puts "|--------------------------------------------------------------------|"
     puts "| 1. Add data to the beginning of the list                           |"
     puts "|--------------------------------------------------------------------|"
     puts "| 2. Add data to the end of end of the list                          |" 
     puts "|--------------------------------------------------------------------|"
-    puts "| 3. Add data in the middle of the list - index provided by the user |"
+    puts "| 3. Add data at certine position                                    |"
     puts "|--------------------------------------------------------------------|"
     puts "| 4. Reverse the Linked List                                         |"
     puts "|--------------------------------------------------------------------|"
