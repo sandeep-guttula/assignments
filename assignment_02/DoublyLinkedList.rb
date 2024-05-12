@@ -155,5 +155,3 @@ while true
     end
 end
 
-puts "Thank you for using the Doubly Linked List Operations"
-
