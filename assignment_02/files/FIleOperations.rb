@@ -24,7 +24,11 @@
 class FileOperations
 
     def createFile(folder_name, fileName, fileContent)
+
+        # creating a folder if it does not exist
         Dir.mkdir(folder_name) unless File.exists?(folder_name)
+
+        # creating a file with the given file name and writing the content to the file
         File.open("#{folder_name}/#{fileName}", 'w') do |file|
             file.write(fileContent)
         end
@@ -37,6 +41,8 @@ class FileOperations
     end
 
     def deleteFile(folderName, fileName)
+
+        # deleting the file
         File.delete("#{folderName}/#{fileName}")
     end
 end
