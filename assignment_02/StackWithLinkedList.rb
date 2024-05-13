@@ -8,6 +8,7 @@
 class Node
     attr_accessor :data, :next_node
   
+    # Initialize the node with data
     def initialize(data)
       @data = data
       @next_node = nil
@@ -20,8 +21,11 @@ class Node
       @length = 0
     end
   
+    # Push data to the stack
     def push(data)
+      # creating the new node
       new_node = Node.new(data)
+      # setting the next node to the top
       new_node.next_node = @top
       @top = new_node
       @length += 1
@@ -29,11 +33,14 @@ class Node
     end
   
     def pop
+
+      # If the stack is empty
       if @top.nil?
         puts "Stack is empty."
         return
       end
       popped = @top.data
+      # setting the top to the next node
       @top = @top.next_node
       @length -= 1
       puts "Popped element: #{popped}"
@@ -41,6 +48,8 @@ class Node
     end
   
     def peek
+
+      # If the stack is empty
       if @top.nil?
         puts "Stack is empty."
         return

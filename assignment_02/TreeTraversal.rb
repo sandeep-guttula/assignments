@@ -9,6 +9,7 @@
 class Node 
     attr_accessor :data, :left, :right
 
+    # Initialize the node with data
     def initialize(data)
         @data = data
         @left = nil
@@ -28,10 +29,13 @@ class BinarySearchTree
     end
 
     def helper(node, data)
+
+        # If the node is nil, return a new node with the data
         if node.nil?
             return Node.new(data)
         end
 
+        # check if the data is less than the node data
         if data < node.data
             node.left = helper(node.left, data)
         else
@@ -43,6 +47,7 @@ class BinarySearchTree
 
     def preOrderTraversal(node = @root)
         
+        # If the node is nil, return
         if node.nil?
             return
         end
@@ -54,6 +59,8 @@ class BinarySearchTree
     end
 
     def inOrderTraversal(node = @root)
+
+        # If the node is nil, return
         if node.nil?
             return
         end
@@ -63,6 +70,7 @@ class BinarySearchTree
     end
 
     def postOrderTraversal(node = @root)
+        # If the node is nil, return
         if node.nil?
             return
         end

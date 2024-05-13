@@ -32,9 +32,11 @@ class SingleLinkedList
     def addAtStart(data)
         current = @head
 
+        # If the head is nil, create a new node with the data
         if current == nil
             @head = Node.new(data)
         else
+            # Create a new node with the data and set the next_node to the current head
             new_node = Node.new(data)
             new_node.next_node = current
             @head = new_node
@@ -48,9 +50,12 @@ class SingleLinkedList
             @head = Node.new(data)
         else
             current = @head
+            # Traversign the linked list till the last node
             while current.next_node != nil
                 current = current.next_node
             end
+
+            # Creating a new node with the data and setting the next_node of the last node to the new node
             current.next_node = Node.new(data)
         end
         @length += 1
@@ -58,6 +63,8 @@ class SingleLinkedList
     end
 
     def insertAtMiddle(index,data)
+
+        # If the index is greater than the length of the linked list, return
         if index > @length 
             puts "Insertion is not possible at index #{index}. Length of list is #{@length}"
             return
@@ -72,11 +79,13 @@ class SingleLinkedList
             new_node = Node.new(data)
             
             i = 1
+            # Traversing the linked list till the index - 1
             while i < index - 1
                 current = current.next_node
                 i += 1
             end
 
+            # Setting the next_node of the new node to the next_node of the current node
             new_node.next_node = current.next_node
             current.next_node = new_node
             @length += 1
@@ -90,6 +99,7 @@ class SingleLinkedList
         next_node = nil
         puts "#{current.data}"
 
+        # Traversing the linked list and reversing the next_node of the current node to the previous node
         while current != nil
             next_node = current.next_node
             current.next_node = previous_node

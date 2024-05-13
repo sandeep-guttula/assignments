@@ -9,8 +9,10 @@
 
 class Node 
 
+    # 
     attr_accessor :data, :next_node, :prev_node
 
+    # Initialize the node with data
     def initialize(data)
         @data = data
         @next_node = nil
@@ -20,11 +22,14 @@ class Node
 end
 
 class DoublyLinkedList
+
+    # Initialize the linked list
     def initialize
         @head = nil
         @length = 0
     end
 
+    # Add data to the beginning of the list
     def addAtStart(data)
         current = @head
         if current == nil?
@@ -39,6 +44,7 @@ class DoublyLinkedList
         printList
     end
 
+    # Add data to the end of end of the list
     def addAtLast(data)
         current = @head
         if current == nil
@@ -53,8 +59,10 @@ class DoublyLinkedList
         printList
     end
 
+    # Add data in the middle of the list - index provided by the user
     def addAtPosition(index,data)
 
+        # Check if the index is valid
         if index > @length
             puts "Insertion is not possible at index #{index}. Length of list is #{@length}"
             return
@@ -65,15 +73,18 @@ class DoublyLinkedList
         elsif index == @length
             addAtLast(data)
         else
+
             current = @head
             new_node = Node.new(data)
 
+            # Traverse to the index-1 position
             i = 1
             while i < index-1
                 current = current.next_node
                 i += 1
             end 
 
+            # Insert the new node
             new_node.next_node = current.next_node
             current.next_node = new_node
             new_node.prev_node = current
@@ -82,10 +93,12 @@ class DoublyLinkedList
         printList
     end
 
-
+    # Reverse the Linked List
     def reverseList
         current = @head
         prev = nil
+
+        # Reversing the pointers of the nodes
         while current != nil
             next_node = current.next_node
             current.next_node = prev
@@ -97,7 +110,7 @@ class DoublyLinkedList
         printList
     end
 
-
+    # Print the linked list
     def printList
         puts
         current = @head
@@ -113,6 +126,8 @@ end
 
 dll = DoublyLinkedList.new
 
+
+# Operations on the linked list
 while true
     puts "|--------------------------------------------------------------------|"
     puts "| Linked List Operations                                              |"

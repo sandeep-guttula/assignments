@@ -8,6 +8,7 @@
 class StackArray
 
 
+    # Initialize the stack with size 
     def initialize(size = 100)
         @size = size
         @stack = Array.new(@size)
@@ -18,7 +19,6 @@ class StackArray
     def push(data)
         if @length == @size
             puts "Stack is full"
-            redo
             return
         end
         @stack[@length] = data
@@ -27,6 +27,8 @@ class StackArray
     end
 
     def pop
+
+        # If the stack is empty return
         if @stack.empty?
             puts "Stack is empty"
             return
@@ -48,8 +50,10 @@ class StackArray
 
     def printStack
         puts "\n\n\n--- Stack ---"
-        @length.times do |i|
+        i = @length - 1
+        while i >= 0
             puts "| #{@stack[i]} |"
+            i -= 1
         end
         puts "-------------"
     end

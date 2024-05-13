@@ -1,4 +1,6 @@
 class QueueArray
+
+  
   def initialize(size = 0)
     @size = size
     @queue = Array.new(@size)

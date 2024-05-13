@@ -8,6 +8,7 @@
 class Node
     attr_accessor :data, :next_node
   
+    # Initialize the node with data
     def initialize(data)
       @data = data
       @next_node = nil
