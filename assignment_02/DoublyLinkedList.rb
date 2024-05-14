@@ -30,7 +30,7 @@ class DoublyLinkedList
     end
 
     # Add data to the beginning of the list
-    def addAtStart(data)
+    def add_at_start(data)
         current = @head
         if current == nil?
             @head = Node.new(data)
@@ -41,11 +41,11 @@ class DoublyLinkedList
         new_node.next_node = @head
         @head = new_node
         @length += 1
-        printList
+        print_list
     end
 
     # Add data to the end of end of the list
-    def addAtLast(data)
+    def add_at_last(data)
         current = @head
         if current == nil
             @head = Node.new(data)
@@ -56,11 +56,11 @@ class DoublyLinkedList
             current.next_node = Node.new(data)
         end
         @length += 1
-        printList
+        print_list
     end
 
     # Add data in the middle of the list - index provided by the user
-    def addAtPosition(index,data)
+    def add_at_position(index,data)
 
         # Check if the index is valid
         if index > @length
@@ -69,9 +69,9 @@ class DoublyLinkedList
         end
 
         if index == 1
-            addAtStart(data)
+            add_at_start(data)
         elsif index == @length
-            addAtLast(data)
+            add_at_last(data)
         else
 
             current = @head
@@ -90,11 +90,11 @@ class DoublyLinkedList
             new_node.prev_node = current
             @length += 1
         end
-        printList
+        print_list
     end
 
     # Reverse the Linked List
-    def reverseList
+    def reverse_list
         current = @head
         prev = nil
 
@@ -107,11 +107,11 @@ class DoublyLinkedList
             current = next_node
         end
         @head = prev
-        printList
+        print_list
     end
 
     # Print the linked list
-    def printList
+    def print_list
         puts
         current = @head
         while current != nil
@@ -150,19 +150,19 @@ while true
         when 1
             print "Enter the data to be added at the beginning of the list: "
             data = gets.chomp
-            dll.addAtStart(data)
+            dll.add_at_start(data)
         when 2
             print "Enter the data to be added at the end of the list: "
             data = gets.chomp
-            dll.addAtLast(data)
+            dll.add_at_last(data)
         when 3
             print "Enter the index at which the data to be added: "
             index = gets.chomp.to_i
             print "Enter the data to be added at the index #{index}: "
             data = gets.chomp
-            dll.addAtPosition(index,data)
+            dll.add_at_position(index,data)
         when 4
-            dll.reverseList
+            dll.reverse_list
         when 5
             break
         else

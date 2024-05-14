@@ -13,8 +13,8 @@ class NQueens
         @board = Array.new(@board_size) { Array.new(@board_size, 0) }
     end
 
-    def solveQueens 
-        if solveHelper(0)
+    def solve_queens 
+        if solve_helper(0)
             puts "Solution Exists:"
             printBoard
         else
@@ -22,7 +22,7 @@ class NQueens
         end
     end
 
-    def solveHelper(col)
+    def solve_helper(col)
         # checking if all queens are placed
         if col == @board_size
             return true
@@ -30,12 +30,12 @@ class NQueens
 
         
         for i in 0...@board_size
-            if isSafe(i, col)
+            if is_safe(i, col)
 
                 # Place the queen
                 @board[i][col] = 1
 
-                if solveHelper(col + 1)
+                if solve_helper(col + 1)
                     return true
                 end
 
@@ -48,7 +48,7 @@ class NQueens
     end
 
 
-    def isSafe(row, col)
+    def is_safe(row, col)
 
         # Check row on left side
         for i in 0...col
@@ -101,7 +101,7 @@ board_size = gets.chomp.to_i
 
 if board_size >= 4
     n_queens = NQueens.new(board_size)
-    n_queens.solveQueens
+    n_queens.solve_queens
 else
     puts "Minimum board size should be 4."
 end

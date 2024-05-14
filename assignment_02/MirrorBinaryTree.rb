@@ -42,14 +42,14 @@ class BinaryTree
         return node
     end
 
-    def printTree(node = @root)
+    def print_tree(node = @root)
         # If the node is nil, return
         if node.nil?
             return
         end
-        printTree(node.left)
+        print_tree(node.left)
         print "#{node.data} "
-        printTree(node.right)
+        print_tree(node.right)
     end
 
     def mirror(node = @root)
@@ -91,7 +91,7 @@ while true
         bt.add(data)
     when 2
         puts "The binary tree is:"
-        bt.printTree
+        bt.print_tree
         puts
     when 3
         bt.mirror

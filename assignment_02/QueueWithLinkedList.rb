@@ -34,7 +34,7 @@ class Queue
             @rear = new_node
         end
         @length += 1
-        printQueue
+        print_queue
     end
 
     def dequeue
@@ -45,10 +45,10 @@ class Queue
         puts "Dequeued data: #{@front.data}"
         @front = @front.next_node
         @length -= 1
-        printQueue
+        print_queue
     end
 
-    def printQueue
+    def print_queue
         if @front == nil
             puts "Queue is empty"
             return
@@ -86,7 +86,7 @@ while true
     when 2
         queue.dequeue
     when 3
-        queue.printQueue
+        queue.print_queue
     else
         puts "Invalid choice"
     end

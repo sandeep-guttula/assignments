@@ -29,7 +29,7 @@ class SingleLinkedList
         @length = 0
     end
 
-    def addAtStart(data)
+    def add_at_start(data)
         current = @head
 
         # If the head is nil, create a new node with the data
@@ -42,10 +42,10 @@ class SingleLinkedList
             @head = new_node
         end
         @length += 1
-        displaySingleLinkedList
+        display_single_linked_list
     end
 
-    def addAtEnd(data)
+    def add_at_end(data)
         if @head == nil
             @head = Node.new(data)
         else
@@ -59,10 +59,10 @@ class SingleLinkedList
             current.next_node = Node.new(data)
         end
         @length += 1
-        displaySingleLinkedList
+        display_single_linked_list
     end
 
-    def insertAtMiddle(index,data)
+    def insert_at_middle(index,data)
 
         # If the index is greater than the length of the linked list, return
         if index > @length 
@@ -71,9 +71,9 @@ class SingleLinkedList
         end
 
         if index == 0
-            addAtStart(data)
+            add_at_start(data)
         elsif index == @length
-            addAtEnd(data)
+            add_at_end(data)
         else
             current = @head
             new_node = Node.new(data)
@@ -89,11 +89,11 @@ class SingleLinkedList
             new_node.next_node = current.next_node
             current.next_node = new_node
             @length += 1
-            displaySingleLinkedList
+            display_single_linked_list
         end
     end
 
-    def reverseLinkedList
+    def reverse_linked_list
         current = @head
         previous_node = nil
         next_node = nil
@@ -107,10 +107,10 @@ class SingleLinkedList
             current = next_node
         end
         @head = previous_node
-        displaySingleLinkedList
+        display_single_linked_list
     end
 
-    def displaySingleLinkedList
+    def display_single_linked_list
         puts
         current = @head
         while !current.nil?
@@ -148,19 +148,19 @@ while true
         when 1
             print "Enter the data to be added at the beginning of the list: "
             data = gets.chomp
-            sll.addAtStart(data)
+            sll.add_at_start(data)
         when 2
             print "Enter the data to be added at the end of the list: "
             data = gets.chomp
-            sll.addAtEnd(data)
+            sll.add_at_end(data)
         when 3
             print "Enter the index at which the data to be added: "
             index = gets.chomp.to_i
             print "Enter the data to be added at the index #{index}: "
             data = gets.chomp
-            sll.insertAtMiddle(index,data)
+            sll.insert_at_middle(index,data)
         when 4
-            sll.reverseLinkedList
+            sll.reverse_linked_list
         when 5
             break
         else

@@ -47,21 +47,21 @@ class BinaryTree
         return node
     end
 
-    def printTree(node = @root)
+    def print_tree(node = @root)
         # If the node is nil, return
         if node.nil?
             return
         end
-        printTree(node.left)
+        print_tree(node.left)
         print "#{node.data} "
-        printTree(node.right)
+        print_tree(node.right)
     end
 
-    def nthSmallestElement(node = @root,n)
+    def nth_smallest_element(node = @root,n)
         @count = 0
         @result = 0
 
-        helperNthSmallestElement(node,n)
+        helperNth_smallest_element(node,n)
         if @count < n
             puts "The tree does not have #{n} nodes"
             return
@@ -69,19 +69,19 @@ class BinaryTree
         return @result
     end
 
-    def helperNthSmallestElement(node,n)
+    def helperNth_smallest_element(node,n)
         if node.nil?
             return
         end
 
-        helperNthSmallestElement(node.left,n)
+        helperNth_smallest_element(node.left,n)
 
         # Incrementing the count and check if the count is equal to n
         @count += 1
         if @count == n
             @result = node.data
         end
-        helperNthSmallestElement(node.right,n)
+        helperNth_smallest_element(node.right,n)
     end
 
 end
@@ -96,8 +96,8 @@ for i in 0...n
     bt.add(data)
 end
 
-bt.printTree
+bt.print_tree
 puts
 puts "Enter the value of n"
 n = gets.chomp.to_i
-puts "The #{n}th smallest element in the BST is: #{bt.nthSmallestElement(n)}"
+puts "The #{n}th smallest element in the BST is: #{bt.nth_smallest_element(n)}"

@@ -45,7 +45,7 @@ class BinarySearchTree
     end
 
 
-    def preOrderTraversal(node = @root)
+    def pre_order_traversal(node = @root)
         
         # If the node is nil, return
         if node.nil?
@@ -54,29 +54,29 @@ class BinarySearchTree
         
         print "#{node.data} "
 
-        preOrderTraversal(node.left)
-        preOrderTraversal(node.right)
+        pre_order_traversal(node.left)
+        pre_order_traversal(node.right)
     end
 
-    def inOrderTraversal(node = @root)
+    def in_order_traversal(node = @root)
 
         # If the node is nil, return
         if node.nil?
             return
         end
-        inOrderTraversal(node.left)
+        in_order_traversal(node.left)
         print "#{node.data} "
-        inOrderTraversal(node.right)
+        in_order_traversal(node.right)
     end
 
-    def postOrderTraversal(node = @root)
+    def post_order_traversal(node = @root)
         # If the node is nil, return
         if node.nil?
             return
         end
 
-        postOrderTraversal(node.left)
-        postOrderTraversal(node.right)
+        post_order_traversal(node.left)
+        post_order_traversal(node.right)
         print "#{node.data} "
     end
 
@@ -97,11 +97,11 @@ for i in 0...n
     bst.add(data)
 end
 
-bst.preOrderTraversal
+bst.pre_order_traversal
 puts 
 
-bst.inOrderTraversal
+bst.in_order_traversal
 puts
 
-bst.postOrderTraversal
+bst.post_order_traversal
 puts

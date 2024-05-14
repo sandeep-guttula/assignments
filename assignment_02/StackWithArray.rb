@@ -23,7 +23,7 @@ class StackArray
         end
         @stack[@length] = data
         @length += 1
-        printStack
+        print_stack
     end
 
     def pop
@@ -36,7 +36,7 @@ class StackArray
         @length -= 1
         popped = @stack[@length]
         @stack[@length] = nil
-        printStack
+        print_stack
         return popped
     end
 
@@ -48,7 +48,7 @@ class StackArray
         puts "Top element is #{@stack[@length - 1]}"
     end
 
-    def printStack
+    def print_stack
         puts "\n\n\n--- Stack ---"
         i = @length - 1
         while i >= 0

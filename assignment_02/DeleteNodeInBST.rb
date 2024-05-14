@@ -39,20 +39,20 @@ class BinaryTree
         return node
     end
 
-    def printTree(node = @root)
+    def print_tree(node = @root)
         if node.nil?
             return
         end
-        printTree(node.left)
+        print_tree(node.left)
         print "#{node.data} "
-        printTree(node.right)
+        print_tree(node.right)
     end
 
-    def deleteNode(data)
-        @root = deleteHelper(@root, data)
+    def delete_node(data)
+        @root = delete_helper(@root, data)
     end
 
-    def deleteHelper(node, data)
+    def delete_helper(node, data)
 
         # If the node is nil, return
         if node.nil?
@@ -60,11 +60,11 @@ class BinaryTree
         end
 
         if data < node.data
-            # Recursively call the deleteHelper function on the left node
-            node.left = deleteHelper(node.left, data)
+            # Recursively call the delete_helper function on the left node
+            node.left = delete_helper(node.left, data)
         elsif data > node.data
-            # Recursively call the deleteHelper function on the right node
-            node.right = deleteHelper(node.right, data)
+            # Recursively call the delete_helper function on the right node
+            node.right = delete_helper(node.right, data)
         else
             if node.left.nil?
                 return node.right
@@ -73,15 +73,15 @@ class BinaryTree
             end
 
             # If the node has two children then get the minimum value in the right subtree
-            node.data = minValue(node.right)
-            node.right = deleteHelper(node.right, node.data)
+            node.data = min_value(node.right)
+            node.right = delete_helper(node.right, node.data)
         end
         return node
         
     end
 
     # Find the minimum value in the tree
-    def minValue(node)
+    def min_value(node)
         current = node
         # iterating through the left nodes to find the minimum value
         while current.left != nil
@@ -118,9 +118,9 @@ while true
     when 2
         print "Enter the data to delete: "
         data = gets.chomp.to_i
-        tree.deleteNode(data)
+        tree.delete_node(data)
     when 3
-        tree.printTree
+        tree.print_tree
         puts
     when 4
         break
