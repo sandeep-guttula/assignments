@@ -11,9 +11,10 @@ class DijkstraAlgorithm
 
     visited = Array.new(vertices, false)
 
-    distance = Array.new(vertices, Float::INFINITY)
+    distance = Array.new(vertices, 1e9)
 
     distance[start_node] = 0
+
 
     for i in 0...vertices-1
 
@@ -44,7 +45,7 @@ class DijkstraAlgorithm
       end
     end
 
-    return min_index
+    min_index
   end
 
   def print_distance(distance)
